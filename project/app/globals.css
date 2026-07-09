@@ -1,0 +1,97 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 1. Google Fonts se Inter import rakha hai, aur agar SCHABO aapke paas local font hai toh use alag se @font-face me define karna hoga */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Brand Guideline Ke Hisab Se HSL Values Update Ki Hain */
+    --background: 0 0% 100%;             /* White background ko space dene ke liye */
+    --foreground: 213 75% 12%;           /* Very dark sapphire text ke liye */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 213 75% 12%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 75% 12%;
+    
+    /* Deep Sapphire - The Main Brand Color */
+    --primary: 213 78% 20%;              /* #0B2E59 (Deep Sapphire) ka approximate HSL */
+    --primary-foreground: 0 0% 100%;     /* White text on primary */
+    
+    /* Secondary/Alternate Option */
+    --secondary: 213 67% 33%;            /* Corporate Blue option */
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 213 20% 95%;
+    --muted-foreground: 213 15% 45%;
+    
+    /* Orangey Red - Compliments White and adds Sophistication */
+    --accent: 12 100% 50%;               /* #FF3B00 (Orangey Red) ka approximate HSL */
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 213 20% 90%;
+    --input: 213 20% 90%;
+    --ring: 213 78% 20%;                 /* Ring color matches Deep Sapphire */
+    
+    --radius: 0.25rem;
+
+    /* Hex Variables (Agar aap directly tailwind.config me call karte hain) */
+    --deep-sapphire: #0B2E59;
+    --orangey-red: #FF3B00;              /* Brand Guidelines wala exact sharp red-orange */
+    --white: #FFFFFF;
+    --text-dark: #0B2E59;
+  }
+
+  .dark {
+    /* Dark mode me Deep Sapphire aur Orangey red ko maintain karte hue background dark kiya hai */
+    --background: 213 50% 10%;
+    --foreground: 0 0% 100%;
+    
+    --card: 213 45% 14%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 213 45% 14%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 213 78% 25%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 213 67% 40%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 213 30% 18%;
+    --muted-foreground: 213 15% 70%;
+    
+    --accent: 12 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    
+    --border: 213 30% 22%;
+    --input: 213 30% 22%;
+    --ring: 213 78% 25%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;   /* Body ke liye clean reading font */
+  }
+  
+  /* image_710be8.png ke mutabik primary typeface ab 'SCHABO Condensed' hoga */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'SCHABO Condensed', 'Impact', 'Arial Narrow', sans-serif;
+    text-transform: uppercase;         /* Kyunki condensed fonts uppercase me best lagte hain */
+    letter-spacing: 0.05em;
+  }
+}

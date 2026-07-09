@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700;900&display=swap');
+/* * {
+  outline: 1px solid red !important;
+} */
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 220 14% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 14% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 14% 10%;
+    --primary: 213 75% 19%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 213 67% 33%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 27%;
+    --accent: 43 55% 54%;
+    --accent-foreground: 213 75% 19%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 213 75% 19%;
+    --chart-1: 213 75% 19%;
+    --chart-2: 213 67% 33%;
+    --chart-3: 43 55% 54%;
+    --chart-4: 220 14% 10%;
+    --chart-5: 215 16% 27%;
+    --radius: 0.25rem;
+
+    --navy: #0B2E59;
+    --corporate-blue: #1B4D8C;
+    --gold: #C8A14A;
+    --light-bg: #F8FAFC;
+    --white: #FFFFFF;
+    --text-dark: #111827;
+    --text-medium: #374151;
+  }
+
+  .dark {
+    --background: 220 14% 10%;
+    --foreground: 210 40% 98%;
+    --card: 220 14% 13%;
+    --card-foreground: 210 40% 98%;
+    --popover: 220 14% 13%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 213 75% 25%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 213 67% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 14% 18%;
+    --muted-foreground: 215 16% 70%;
+    --accent: 43 55% 54%;
+    --accent-foreground: 213 75% 19%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 14% 20%;
+    --input: 220 14% 20%;
+    --ring: 213 75% 25%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+  }
+}
