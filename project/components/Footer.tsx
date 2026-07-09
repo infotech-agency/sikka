@@ -325,6 +325,8 @@
 //     </footer>
 //   );
 // }
+
+
 "use client"
 import Link from 'next/link';
 import { Phone, Mail, MapPin, ChevronRight, Facebook, Instagram, Twitter, Youtube, Linkedin } from 'lucide-react';
@@ -451,7 +453,7 @@ export function Footer() {
             </p>
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3 text-gray-800">
-                {/* <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-[#EA4922]" /> */}
+                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-[#EA4922]" />
                 <span className="text-sm">{companyInfo.address}</span>
               </div>
               <div className="flex items-center gap-3 text-gray-800">
