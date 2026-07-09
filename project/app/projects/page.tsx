@@ -539,7 +539,7 @@ export default function ProjectsPage() {
     try {
       setLoading(true);
       setError(null);
-      const res = await fetch(`${BASE_URL}/api/projects`);
+      const res = await fetch(`${BASE_URL}/projects`);
       const data = await res.json();
       console.log('API Response:', data);
 
