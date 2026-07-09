@@ -245,7 +245,7 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
 async function getServices(): Promise<Service[]> {
   try {
-    const res = await fetch(`${BASE_URL}/api/services`, {
+    const res = await fetch(`${BASE_URL}/services`, {
       cache: 'no-store',
     });
 
