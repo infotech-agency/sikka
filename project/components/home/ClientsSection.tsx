@@ -230,38 +230,7 @@ export function ClientsSection() {
         </div>
       </FadeIn>
 
-      <div className="max-w-7xl mx-auto px-4 mt-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {/* {[
-            { value: '100+', label: 'Government Clients' },
-            { value: '50+', label: 'Corporate Clients' },
-            { value: '15+', label: 'PSU Partnerships' },
-            { value: '100%', label: 'Repeat Business' },
-          ].map((stat, index) => (
-            <div key={index} className="bg-[#F8FAFC] border border-gray-200 p-6">
-              <div className="text-2xl font-bold text-[#0B2E59]  mb-1">{stat.value}</div>
-              <div className="text-sm text-[#374151]">{stat.label}</div>
-            </div>
-          ))} */}
-          {counters.slice(0, 4).map((item: any) => (
-  <div
-    key={item._id}
-    className="bg-[#F8FAFC] border border-gray-200 p-6"
-  >
-    <div className="text-2xl font-bold text-[#0B2E59] mb-1">
-      <CountUp
-        end={Number(item.number || item.counter)}
-        suffix={item.prefix || ""}
-      />
-    </div>
-
-    <div className="text-sm text-[#374151]">
-      {item.label}
-    </div>
-  </div>
-))}
-        </div>
-      </div>
+     
     </section>
   );
 }

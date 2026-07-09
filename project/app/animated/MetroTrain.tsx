@@ -130,7 +130,7 @@ export default function MetroTrain() {
           className="absolute left-0 z-10 w-[200px] sm:w-[320px] md:w-[500px] lg:w-[650px] xl:w-[750px] drop-shadow-[0_20px_50px_rgba(11,46,89,0.3)]"
         >
           <Image
-            src="/images/metro-train.png"
+            src="/images/train.png"
             alt="Metro Train"
             width={750}
             height={220}

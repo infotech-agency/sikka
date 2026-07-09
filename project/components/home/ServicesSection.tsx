@@ -239,7 +239,92 @@
 //   );
 // }
 
-import { Compass, Building2, ClipboardList, Factory, Zap, Landmark, Train, Wrench, Target, PenTool, Briefcase } from 'lucide-react';
+// import { Compass, Building2, ClipboardList, Factory, Zap, Landmark, Train, Wrench, Target, PenTool, Briefcase } from 'lucide-react';
+// import { SectionHeader } from '@/components/SectionHeader';
+// import { StaggerContainer, StaggerItem } from '@/components/animations';
+// import { BASE_URL } from '@/utils/baseUrl';
+
+// interface Service {
+//   _id: string;
+//   id: string;
+//   title: string;
+//   description: string;
+//   image?: string;
+//   keyCapabilities?: string[];
+// }
+
+// // API doesn't return an icon field, so we rotate through this list based on index
+// const iconList = [
+//   <Factory className="h-8 w-8" key="Factory" />,
+//   <ClipboardList className="h-8 w-8" key="ClipboardList" />,
+//   <Wrench className="h-8 w-8" key="Wrench" />,
+//   <Target className="h-8 w-8" key="Target" />,
+//   <Zap className="h-8 w-8" key="Zap" />,
+//   <Train className="h-8 w-8" key="Train" />,
+//   <Building2 className="h-8 w-8" key="Building2" />,
+//   <Compass className="h-8 w-8" key="Compass" />,
+//   <Landmark className="h-8 w-8" key="Landmark" />,
+//   <PenTool className="h-8 w-8" key="PenTool" />,
+//   <Briefcase className="h-8 w-8" key="Briefcase" />,
+// ];
+
+// async function getServicesData(): Promise<Service[]> {
+//   try {
+//     const res = await fetch(`${BASE_URL}/services`, {
+//       cache: 'no-store',
+//     });
+
+//     if (!res.ok) {
+//       console.error('Failed to fetch services, status:', res.status);
+//       return [];
+//     }
+
+//     const data = await res.json();
+//     return data.success && data.data ? data.data : [];
+//   } catch (error) {
+//     console.error('Error fetching services:', error);
+//     return [];
+//   }
+// }
+
+// export async function ServicesSection() {
+//   const services = await getServicesData();
+
+//   if (services.length === 0) {
+//     return null; // hide section if no data, avoids empty section on homepage
+//   }
+
+//   return (
+//     <section className="py-20 bg-[#F8FAFC]">
+//       <div className="max-w-7xl mx-auto px-4">
+//         <SectionHeader
+//           title="Our Services"
+//           subtitle="What We Offer"
+//         />
+//         <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+//           {services.map((service, index) => (
+//             <StaggerItem key={service.id || service._id}>
+//               <div className="bg-white p-8 border border-gray-200 hover:border-[#EA4922] hover:shadow-lg transition-all duration-300 group h-full">
+//                 <div className="w-14 h-14 bg-[#0B2E59] text-white flex items-center justify-center mb-6 group-hover:bg-[#EA4922] transition-colors">
+//                   {iconList[index % iconList.length]}
+//                 </div>
+//                 <h3 className="text-xl text-[#111827] mb-3">
+//                   {service.title}
+//                 </h3>
+//                 <p className="text-[#374151] text-sm leading-relaxed">
+//                   {service.description}
+//                 </p>
+//               </div>
+//             </StaggerItem>
+//           ))}
+//         </StaggerContainer>
+//       </div>
+//     </section>
+//   );
+// }
+
+import Link from 'next/link';
+import { Compass, Building2, ClipboardList, Factory, Zap, Landmark, Train, Wrench, Target, PenTool, Briefcase, ChevronRight } from 'lucide-react';
 import { SectionHeader } from '@/components/SectionHeader';
 import { StaggerContainer, StaggerItem } from '@/components/animations';
 import { BASE_URL } from '@/utils/baseUrl';
@@ -304,17 +389,24 @@ export async function ServicesSection() {
         <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <StaggerItem key={service.id || service._id}>
-              <div className="bg-white p-8 border border-gray-200 hover:border-[#EA4922] hover:shadow-lg transition-all duration-300 group h-full">
+              <Link
+                href={`/services/${service.id || service._id}`}
+                className="bg-white p-8 border border-gray-200 hover:border-[#EA4922] hover:shadow-lg transition-all duration-300 group h-full flex flex-col"
+              >
                 <div className="w-14 h-14 bg-[#0B2E59] text-white flex items-center justify-center mb-6 group-hover:bg-[#EA4922] transition-colors">
                   {iconList[index % iconList.length]}
                 </div>
                 <h3 className="text-xl text-[#111827] mb-3">
                   {service.title}
                 </h3>
-                <p className="text-[#374151] text-sm leading-relaxed">
+                <p className="text-[#374151] text-sm leading-relaxed line-clamp-3">
                   {service.description}
                 </p>
-              </div>
+                <div className="mt-auto pt-4 flex items-center gap-2 text-[#0B2E59] font-semibold text-sm">
+                  <span>Learn More</span>
+                  <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
             </StaggerItem>
           ))}
         </StaggerContainer>
