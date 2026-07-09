@@ -204,6 +204,7 @@ export function ContactPageForm() {
 
   return (
     <form className="space-y-5" onSubmit={handleSubmit}>
+       <h1 className='text-xl'>Quick Inquiry</h1>
       {/* Success Message */}
       {success && (
         <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3">
@@ -219,6 +220,7 @@ export function ContactPageForm() {
       )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+       
         <div>
           <label className="block text-sm font-medium text-[#374151] mb-2">Full Name *</label>
           <input
@@ -246,8 +248,8 @@ export function ContactPageForm() {
           />
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <div>
+      <div className="grid  gap-5">
+        <div className=''>
           <label className="block text-sm font-medium text-[#374151] mb-2">Phone</label>
           <input
             type="tel"
@@ -277,13 +279,13 @@ export function ContactPageForm() {
         />
       </div>
       <button
-        type="submit"
-        disabled={isLoading}
-        className="inline-flex w-full items-center gap-2 bg-[#0B2E59] text-white px-6 py-3 text-sm font-semibold hover:bg-[#1B4D8C] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        <Send className="h-4 w-4" />
-        {isLoading ? 'Sending...' : 'Send Message'}
-      </button>
+  type="submit"
+  disabled={isLoading}
+  className="inline-flex w-full items-center justify-center gap-2 bg-[#DB1B01] text-white px-6 py-3 text-sm font-semibold hover:bg-[#1B4D8C] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+>
+  {/* <Send className="h-4 w-4" /> */}
+  {isLoading ? 'Sending...' : 'Submit Enquiry'}
+</button>
     </form>
   );
 }

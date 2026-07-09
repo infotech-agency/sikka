@@ -27,7 +27,7 @@ export function NavigationCardsSection() {
       {/* Bottom Industrial Building SVG Vector */}
       <div 
         className="absolute bottom-0 left-0 w-full h-[180px] sm:h-[240px] md:h-[300px] bg-bottom bg-no-repeat bg-contain pointer-events-none z-0"
-        style={{ backgroundImage: `url('/images/construction2.png')` }} 
+        style={{ backgroundImage: `url('/images/construction3.png')` }} 
       />
     </section>
   );
